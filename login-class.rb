@@ -10,7 +10,7 @@ driver = Selenium::WebDriver.for :firefox
 #driver = Selenium::WebDriver.for :ie
 
 #implicit wait - wait 5 secs until error - for all elements 
-driver.manage.timeouts.implicit_wait = 5
+driver.manage.timeouts.implicit_wait = 10
 
 #maximize the window
 driver.manage.window.maximize 
@@ -18,10 +18,14 @@ driver.manage.window.maximize
 #navigation to the website
 driver.get "https://staging-dev-app.decibelinsight.net/"
 
-sleep(10)
+#sleep(10)
+
+wait = Selenium::WebDriver::Wait.new(:time =>10)
+wait.until {driver.find_element(:xpath, "//input[@name='di_e']")}
      
 #find element for username
-username = driver.find_element(:name, "di_e")
+#username = driver.find_element(:name, "di_e")
+username = driver.find_element(:xpath, "//input[@name='di_e']")
 
 #type username in text box
 username.send_keys("mdevenney")
