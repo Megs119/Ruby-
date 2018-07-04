@@ -21,7 +21,8 @@ driver.get "https://staging-dev-app.decibelinsight.net/"
 #sleep(10)
 
 wait = Selenium::WebDriver::Wait.new(:time =>10)
-wait.until {driver.find_element(:xpath, "//input[@name='di_e']")}
+#wait.until {driver.find_element(:xpath, "//input[@name='di_e']")}
+wait.until {driver.find_element(:name, "di_e")}
      
 #find element for username
 #username = driver.find_element(:name, "di_e")
