@@ -9,6 +9,7 @@ driver = Selenium::WebDriver.for :firefox
 #driver = Selenium::WebDriver.for :firefox
 #driver = Selenium::WebDriver.for :ie
 
+#implicit wait - wait 5 secs until error - for all elements 
 driver.manage.timeouts.implicit_wait = 5
 
 #maximize the window
@@ -47,6 +48,8 @@ sign_in_btn.click
 #Validate title of next page
 puts driver.title
 
+
+
 #validitate the title
 if driver.title.downcase == "decibel > login"
   puts "Test Case Passed"
@@ -54,4 +57,6 @@ else
   raise "Test Case Failed"
 end
 
+#Kill browser or driver instance
 driver.quit
+#driver.close
