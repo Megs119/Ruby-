@@ -1,0 +1,16 @@
+record1:
+ username: testing
+ password: testing
+ triptype: oneway
+ no_of_passengers: 2
+record2:
+ username: testing
+ password: testing
+ triptype: roundtrip
+ no_of_passengers: 2
+record3:
+ username: testing
+ password: testing
+ triptype: roundtrip
+ no_of_passengers: 4
+ 

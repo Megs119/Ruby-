@@ -64,6 +64,22 @@ wait.until {driver.find_element(:xpath, "//h1[contains(text(),'Segments')]")}
 period = driver.find_element(:xpath, "//li[@class='curseg notinhelp']//a[@href='#']//span[@class='menu-item-inactive fill hidden']")
 period.click
 
-form_calendar = driver.find_element(:xpath, "//html//div[1]/div[1]/button[1]")
-form_calendar.click
+#find calendar
+form_from_calendar = driver.find_element(:xpath, "//html//div[1]/div[1]/button[1]")
+form_from_calendar.click
+
+column_calendar = form_from_calendar.find_elements(:xpath, "//table[@class='ui-datepicker-calendar']//tbody")
+
+select_day = 3
+column_calendar.each { |day|
+  puts day.text
+  if day.text == "#{select_day}"
+    day.find_element(:xpath, "//a[@class='ui-state-default'][contains(text(), '#{select_day}')]")
+    day.click
+    puts "found it"
+  else
+    puts "not working"
+  end
+}
+
 
