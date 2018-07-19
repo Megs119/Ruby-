@@ -42,7 +42,7 @@ password = driver.find_element(:css, "input[name^='di_p']")
 
 
 #type password in text box
-password.send_keys("J0ttaPad!")
+password.send_keys("******")
 
 #find sign in button 
 sign_in_btn = driver.find_element(:xpath, "//*[@id='loginForm']/div/div[2]/button/span[1]")
